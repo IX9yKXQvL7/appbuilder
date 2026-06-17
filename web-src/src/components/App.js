@@ -10,6 +10,9 @@ import SideBar from './SideBar'
 import ActionsForm from './ActionsForm'
 import { Home } from './Home'
 import { About } from './About'
+import ShopifyToAdobeCustomerSync from './shopify/ShopifyToAdobeCustomerSync'
+import AdobeProducts from './adobe/AdobeProducts'
+// import TicketSystem from './zoho/TicketSystem'
 
 function App (props) {
   console.log('runtime object:', props.runtime)
@@ -48,6 +51,9 @@ function App (props) {
                 <Route path='/' element={<Home />} />
                 <Route path='/actions' element={<ActionsForm runtime={props.runtime} ims={props.ims} />}/>
                 <Route path='/about' element={<About />}/>
+                <Route path='/shopify-customers' element={<ShopifyToAdobeCustomerSync />}/>
+                <Route path='/adobe-products' element={<AdobeProducts />}/>
+                {/* <Route path='/zoho-ticket-system' element={<TicketSystem />}/> */}
               </Routes>
             </View>
           </Grid>

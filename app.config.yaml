@@ -25,3 +25,51 @@ application:
             annotations:
               require-adobe-auth: true
               final: true
+          shopify-get-customers:
+            function: actions/shopify/get-customers/index.js
+            web: 'yes'
+            runtime: nodejs:22
+            inputs:
+              LOG_LEVEL: debug
+              apiKey: $SERVICE_API_KEY
+            annotations:
+              require-adobe-auth: false
+              raw-http: true
+
+          adobe-product-search:
+            function: actions/adobe/products/index.js
+            web: 'yes'
+            runtime: nodejs:22
+            inputs:
+              LOG_LEVEL: debug
+              apiKey: $SERVICE_API_KEY
+            annotations:
+              require-adobe-auth: false
+              raw-http: true
+
+          step1-get-data:
+            function: actions/sequences/step1-get-data/index.js
+            web: 'yes'
+            runtime: nodejs:22
+            annotations:
+              require-adobe-auth: false
+
+          step2-process-data:
+            function: actions/sequences/step2-process-data/index.js
+            web: 'yes'
+            runtime: nodejs:22
+            annotations:
+              require-adobe-auth: false
+
+          step3-final-response:
+            function: actions/sequences/step3-final-response/index.js
+            web: 'yes'
+            runtime: nodejs:22
+            annotations:
+              require-adobe-auth: false
+              final: true
+
+        sequences:
+          demo-sequence:
+            actions: step1-get-data, step2-process-data, step3-final-response
+            web: 'yes'

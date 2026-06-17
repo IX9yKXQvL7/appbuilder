@@ -31,11 +31,29 @@ function SideBar () {
                 <NavLink
                     className={({ isActive }) => `SideNav-itemLink ${isActive ? 'is-selected' : ''}`}
                     aria-current="page"
-                    to="/about"
+                    to="/shopify-customers"
                 >
-                    About App Builder
+                    Customers
                 </NavLink>
             </li>
+            <li className="SideNav-item">
+                <NavLink
+                    className={({ isActive }) => `SideNav-itemLink ${isActive ? 'is-selected' : ''}`}
+                    aria-current="page"
+                    to="/adobe-products"
+                >
+                    Adobe SKU Lookup
+                </NavLink>
+            </li>
+            {/* <li className="SideNav-item">
+                <NavLink
+                    className={({ isActive }) => `SideNav-itemLink ${isActive ? 'is-selected' : ''}`}
+                    aria-current="page"
+                    to="/zoho-ticket-system"
+                >
+                    Zoho Desk Support Ticket Hub
+                </NavLink>
+            </li> */}
         </ul>
     )
 }
