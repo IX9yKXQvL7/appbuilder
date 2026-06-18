@@ -62,7 +62,7 @@ function MagentoProductPricingRunner() {
 
     return (
         <Flex direction="column" margin="size-300" gap="size-200">
-            <Heading level={1}>Magento 2 Product Master Dashboard</Heading>
+            <Heading level={1}>Adobe Product Master Dashboard</Heading>
             
             {/* Input Form Controls */}
             <Flex direction="row" gap="size-150" alignItems="end" wrap>

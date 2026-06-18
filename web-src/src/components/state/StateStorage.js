@@ -1,40 +1,40 @@
 import React, { useEffect, useState } from 'react'
 
 function StateStorage() {
-    const [data, setData] = useState([])
-    const [loading, setLoading] = useState(false)
-    const [showModal, setShowModal] = useState(false)
-    const [editMode, setEditMode] = useState(false)
+  const [data, setData] = useState([])
+  const [loading, setLoading] = useState(false)
+  const [showModal, setShowModal] = useState(false)
+  const [editMode, setEditMode] = useState(false)
 
-    const [form, setForm] = useState({
-        id: '',
-        name: '',
-        email: '',
-        phone: '',
-        company: '',
-        notes: ''
-    })
+  const [form, setForm] = useState({
+    id: '',
+    name: '',
+    email: '',
+    phone: '',
+    company: '',
+    notes: ''
+  })
 
   // 🔹 FETCH LIST
-    const fetchData = async () => {
-        setLoading(true)
-        try {
-          const res = await fetch('/api/v1/web/Adobe/state-storage-list')
-          const json = await res.json()
+  const fetchData = async () => {
+    setLoading(true)
+    try {
+      const res = await fetch('/api/v1/web/Adobe/state-storage-list')
+      const json = await res.json()
 
-          // normalize API response
-          const normalized = (json.data || []).map(item => ({
-            id: item.key,
-            ...item.value
-          }))
+      // normalize API response
+      const normalized = (json.data || []).map(item => ({
+        id: item.key,
+        ...item.value
+      }))
 
-          setData(normalized)
-        } catch (err) {
-          console.error(err)
-        } finally {
-          setLoading(false)
-        }
+      setData(normalized)
+    } catch (err) {
+      console.error(err)
+    } finally {
+      setLoading(false)
     }
+  }
 
   useEffect(() => {
     fetchData()

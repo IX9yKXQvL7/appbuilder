@@ -125,6 +125,16 @@ application:
               raw-http: false
               final: true
 
+          file-storage:
+            function: actions/file/filestorage.js
+            web: 'yes'
+            runtime: nodejs:22
+            inputs:
+              LOG_LEVEL: debug
+            annotations:
+              require-adobe-auth: false
+              final: true
+
         sequences:
           demo-sequence:
             actions: step1-get-data, step2-process-data, step3-final-response
