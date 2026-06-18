@@ -46,6 +46,7 @@ application:
             annotations:
               require-adobe-auth: false
               raw-http: true
+              final: true
 
           step1-get-data:
             function: actions/sequences/step1-get-data/index.js
@@ -67,6 +68,61 @@ application:
             runtime: nodejs:22
             annotations:
               require-adobe-auth: false
+              final: true
+
+          # contacts-create:
+          #   function: actions/contacts/create.js
+          #   web: 'yes'
+          #   runtime: nodejs:22
+          #   inputs:
+          #     LOG_LEVEL: debug
+          #     IMS_OAUTH_S2S_CLIENT_ID: $IMS_OAUTH_S2S_CLIENT_ID
+          #     IMS_OAUTH_S2S_CLIENT_SECRET: $IMS_OAUTH_S2S_CLIENT_SECRET
+          #     IMS_OAUTH_S2S_ORG_ID: $IMS_OAUTH_S2S_ORG_ID
+          #     IMS_OAUTH_S2S_SCOPES: $IMS_OAUTH_S2S_SCOPES
+          #   annotations:
+          #     require-adobe-auth: false
+          #     include-ims-credential: true
+          #     raw-http: false
+          #     final: true
+
+
+          state-storage:
+            function: actions/stotage/statestorage.js
+            web: 'yes'
+            runtime: nodejs:22
+            inputs:
+              LOG_LEVEL: debug
+              apiKey: $SERVICE_API_KEY
+            annotations:
+              require-adobe-auth: false
+              include-ims-credential: true
+              raw-http: false
+              final: true
+          state-storage-list:
+            function: actions/stotage/list.js
+            web: 'yes'
+            runtime: nodejs:22
+            inputs:
+              LOG_LEVEL: debug
+              apiKey: $SERVICE_API_KEY
+            annotations:
+              require-adobe-auth: false
+              include-ims-credential: true
+              raw-http: false
+              final: true
+
+          state-storage-delete:
+            function: actions/stotage/state-storage-delete.js
+            web: 'yes'
+            runtime: nodejs:22
+            inputs:
+              LOG_LEVEL: debug
+              apiKey: $SERVICE_API_KEY
+            annotations:
+              require-adobe-auth: false
+              include-ims-credential: true
+              raw-http: false
               final: true
 
         sequences:

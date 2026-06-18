@@ -45,15 +45,15 @@ function SideBar () {
                     Adobe SKU Lookup
                 </NavLink>
             </li>
-            {/* <li className="SideNav-item">
+            <li className="SideNav-item">
                 <NavLink
                     className={({ isActive }) => `SideNav-itemLink ${isActive ? 'is-selected' : ''}`}
                     aria-current="page"
-                    to="/zoho-ticket-system"
+                    to="/state-storage"
                 >
-                    Zoho Desk Support Ticket Hub
+                    State Storage
                 </NavLink>
-            </li> */}
+            </li>
         </ul>
     )
 }

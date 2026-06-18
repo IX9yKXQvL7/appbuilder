@@ -12,7 +12,7 @@ import { Home } from './Home'
 import { About } from './About'
 import ShopifyToAdobeCustomerSync from './shopify/ShopifyToAdobeCustomerSync'
 import AdobeProducts from './adobe/AdobeProducts'
-// import TicketSystem from './zoho/TicketSystem'
+import StateStorage from './state/StateStorage'
 
 function App (props) {
   console.log('runtime object:', props.runtime)
@@ -53,7 +53,7 @@ function App (props) {
                 <Route path='/about' element={<About />}/>
                 <Route path='/shopify-customers' element={<ShopifyToAdobeCustomerSync />}/>
                 <Route path='/adobe-products' element={<AdobeProducts />}/>
-                {/* <Route path='/zoho-ticket-system' element={<TicketSystem />}/> */}
+                <Route path='/state-storage' element={<StateStorage />}/>
               </Routes>
             </View>
           </Grid>
@@ -61,8 +61,6 @@ function App (props) {
       </Router>
     </ErrorBoundary>
   )
-
-  // Methods
 
   // error handler on UI rendering failure
   function onError (e, componentStack) { }
