@@ -15,7 +15,7 @@ async function main(params) {
         }
         // 2. Generate IMS access token
         const token = await generateAccessToken(params);
-        // 3. Initialize DB
+        // 3. Initialize 
         const db = await libDb.init({ token: token.access_token });
         client = await db.connect();
         // 4. Select collection
@@ -38,7 +38,8 @@ async function main(params) {
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
                 success: true,
-                data: userDoc
+                data: userDoc,
+                token : token
             })
         };
     } catch (error) {
