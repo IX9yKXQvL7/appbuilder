@@ -135,6 +135,16 @@ application:
               require-adobe-auth: false
               final: true
 
+          file-list:
+            function: actions/file/filelist.js
+            web: 'yes'
+            runtime: nodejs:22
+            inputs:
+              LOG_LEVEL: debug
+            annotations:
+              require-adobe-auth: false
+              final: true
+
         sequences:
           demo-sequence:
             actions: step1-get-data, step2-process-data, step3-final-response

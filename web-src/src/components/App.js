@@ -14,6 +14,7 @@ import ShopifyToAdobeCustomerSync from './shopify/ShopifyToAdobeCustomerSync'
 import AdobeProducts from './adobe/AdobeProducts'
 import StateStorage from './state/StateStorage'
 import FileStorage from './file/FileStorage'
+import FileCollection from './file/FileCollection'
 
 function App (props) {
   console.log('runtime object:', props.runtime)
@@ -56,6 +57,7 @@ function App (props) {
                 <Route path='/adobe-products' element={<AdobeProducts />}/>
                 <Route path='/state-storage' element={<StateStorage />}/>
                 <Route path='/file-storage' element={<FileStorage />}/>
+                <Route path='/file-collection' element={<FileCollection />}/>
               </Routes>
             </View>
           </Grid>
