@@ -15,6 +15,7 @@ import AdobeProducts from './adobe/AdobeProducts'
 import StateStorage from './state/StateStorage'
 import FileStorage from './file/FileStorage'
 import FileCollection from './file/FileCollection'
+import DatabaseStorage from './db/DatabaseStorage'
 
 function App (props) {
   console.log('runtime object:', props.runtime)
@@ -58,6 +59,7 @@ function App (props) {
                 <Route path='/state-storage' element={<StateStorage />}/>
                 <Route path='/file-storage' element={<FileStorage />}/>
                 <Route path='/file-collection' element={<FileCollection />}/>
+                <Route path='/database-storage' element={<DatabaseStorage />}/>
               </Routes>
             </View>
           </Grid>

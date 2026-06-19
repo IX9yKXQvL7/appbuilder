@@ -2,6 +2,9 @@ application:
   actions: actions
   web: web-src
   runtimeManifest:
+    database:
+      auto-provision: true
+      region: amer
     packages:
       Adobe:
         license: Apache-2.0
@@ -35,7 +38,6 @@ application:
             annotations:
               require-adobe-auth: false
               raw-http: true
-
           adobe-product-search:
             function: actions/adobe/products/index.js
             web: 'yes'
@@ -47,21 +49,18 @@ application:
               require-adobe-auth: false
               raw-http: true
               final: true
-
           step1-get-data:
             function: actions/sequences/step1-get-data/index.js
             web: 'yes'
             runtime: nodejs:22
             annotations:
               require-adobe-auth: false
-
           step2-process-data:
             function: actions/sequences/step2-process-data/index.js
             web: 'yes'
             runtime: nodejs:22
             annotations:
               require-adobe-auth: false
-
           step3-final-response:
             function: actions/sequences/step3-final-response/index.js
             web: 'yes'
@@ -69,24 +68,6 @@ application:
             annotations:
               require-adobe-auth: false
               final: true
-
-          # contacts-create:
-          #   function: actions/contacts/create.js
-          #   web: 'yes'
-          #   runtime: nodejs:22
-          #   inputs:
-          #     LOG_LEVEL: debug
-          #     IMS_OAUTH_S2S_CLIENT_ID: $IMS_OAUTH_S2S_CLIENT_ID
-          #     IMS_OAUTH_S2S_CLIENT_SECRET: $IMS_OAUTH_S2S_CLIENT_SECRET
-          #     IMS_OAUTH_S2S_ORG_ID: $IMS_OAUTH_S2S_ORG_ID
-          #     IMS_OAUTH_S2S_SCOPES: $IMS_OAUTH_S2S_SCOPES
-          #   annotations:
-          #     require-adobe-auth: false
-          #     include-ims-credential: true
-          #     raw-http: false
-          #     final: true
-
-
           state-storage:
             function: actions/stotage/statestorage.js
             web: 'yes'
@@ -111,7 +92,6 @@ application:
               include-ims-credential: true
               raw-http: false
               final: true
-
           state-storage-delete:
             function: actions/stotage/state-storage-delete.js
             web: 'yes'
@@ -124,7 +104,6 @@ application:
               include-ims-credential: true
               raw-http: false
               final: true
-
           file-storage:
             function: actions/file/filestorage.js
             web: 'yes'
@@ -134,7 +113,6 @@ application:
             annotations:
               require-adobe-auth: false
               final: true
-
           file-list:
             function: actions/file/filelist.js
             web: 'yes'
@@ -144,7 +122,66 @@ application:
             annotations:
               require-adobe-auth: false
               final: true
+          database-storage:
+            function: actions/db/dbstorage.js
+            web: 'yes'
+            runtime: nodejs:22
+            inputs:
+              LOG_LEVEL: debug
+              IMS_OAUTH_S2S_CLIENT_ID: $IMS_OAUTH_S2S_CLIENT_ID
+              IMS_OAUTH_S2S_CLIENT_SECRET: $IMS_OAUTH_S2S_CLIENT_SECRET
+              IMS_OAUTH_S2S_ORG_ID: $IMS_OAUTH_S2S_ORG_ID
+              IMS_OAUTH_S2S_SCOPES: $IMS_OAUTH_S2S_SCOPES
+            annotations:
+              require-adobe-auth: false
+              include-ims-credentials: true
+              final: true
 
+          database-list:
+            function: actions/db/dbstoragelist.js
+            web: 'yes'
+            runtime: nodejs:22
+            inputs:
+              LOG_LEVEL: debug
+              IMS_OAUTH_S2S_CLIENT_ID: $IMS_OAUTH_S2S_CLIENT_ID
+              IMS_OAUTH_S2S_CLIENT_SECRET: $IMS_OAUTH_S2S_CLIENT_SECRET
+              IMS_OAUTH_S2S_ORG_ID: $IMS_OAUTH_S2S_ORG_ID
+              IMS_OAUTH_S2S_SCOPES: $IMS_OAUTH_S2S_SCOPES
+            annotations:
+              require-adobe-auth: false
+              include-ims-credentials: true
+              final: true
+
+          database-edit:
+            function: actions/db/dbstorageEdit.js
+            web: 'yes'
+            runtime: nodejs:22
+            inputs:
+              LOG_LEVEL: debug
+              IMS_OAUTH_S2S_CLIENT_ID: $IMS_OAUTH_S2S_CLIENT_ID
+              IMS_OAUTH_S2S_CLIENT_SECRET: $IMS_OAUTH_S2S_CLIENT_SECRET
+              IMS_OAUTH_S2S_ORG_ID: $IMS_OAUTH_S2S_ORG_ID
+              IMS_OAUTH_S2S_SCOPES: $IMS_OAUTH_S2S_SCOPES
+            annotations:
+              require-adobe-auth: false
+              include-ims-credentials: true
+              final: true
+
+          database-delete:
+            function: actions/db/dbstoragedelete.js
+            web: 'yes'
+            runtime: nodejs:22
+            inputs:
+              LOG_LEVEL: debug
+              IMS_OAUTH_S2S_CLIENT_ID: $IMS_OAUTH_S2S_CLIENT_ID
+              IMS_OAUTH_S2S_CLIENT_SECRET: $IMS_OAUTH_S2S_CLIENT_SECRET
+              IMS_OAUTH_S2S_ORG_ID: $IMS_OAUTH_S2S_ORG_ID
+              IMS_OAUTH_S2S_SCOPES: $IMS_OAUTH_S2S_SCOPES
+            annotations:
+              require-adobe-auth: false
+              include-ims-credentials: true
+              final: true
+              
         sequences:
           demo-sequence:
             actions: step1-get-data, step2-process-data, step3-final-response

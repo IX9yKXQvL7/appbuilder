@@ -72,6 +72,15 @@ function SideBar () {
                     File Collection
                 </NavLink>
             </li>
+            <li className="SideNav-item">
+                <NavLink
+                    className={({ isActive }) => `SideNav-itemLink ${isActive ? 'is-selected' : ''}`}
+                    aria-current="page"
+                    to="/database-storage"
+                >
+                    Database Operation
+                </NavLink>
+            </li>
         </ul>
     )
 }
