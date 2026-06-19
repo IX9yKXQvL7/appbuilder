@@ -181,7 +181,29 @@ application:
               require-adobe-auth: false
               include-ims-credentials: true
               final: true
+
+          cron-logger:
+            function: actions/cron/index.js
+            web: 'yes'
+            runtime: nodejs:22
+            inputs:
+              LOG_LEVEL: debug
+              apiKey: $SERVICE_API_KEY
+            annotations:
+              require-adobe-auth: false
+              raw-http: true
+              final: true
               
+        triggers:
+          everyMin:
+            feed: /whisk.system/alarms/interval
+            inputs: 
+              minutes: 1
+        rules:
+          everyMinRule:
+            trigger: everyMin
+            action: cron-logger
+
         sequences:
           demo-sequence:
             actions: step1-get-data, step2-process-data, step3-final-response

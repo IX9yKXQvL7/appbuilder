@@ -1,9 +1,11 @@
 const { generateAccessToken } = require('@adobe/aio-sdk').Core.AuthClient;
 const libDb = require('@adobe/aio-lib-db');
+const { Core } = require('@adobe/aio-sdk');
 
 async function main(params) {
     let client;
     try {
+        const logger = Core.Logger('users-action', { level: 'info' });
         const { id, name, email, phone, company, notes } = params;
         if (!id || !name || !email) {
             return {
@@ -33,6 +35,8 @@ async function main(params) {
         // 6. Insert data
         await userCollection.insertOne(userDoc);
         // 7. Success response
+        logger.info('Action invoked');
+        logger.debug('Incoming params', params);
         return {
             statusCode: 201,
             headers: { 'Content-Type': 'application/json' },
