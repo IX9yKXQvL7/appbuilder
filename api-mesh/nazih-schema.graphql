@@ -1,0 +1,24 @@
+type Query {
+  products(filter: ProductAttributeFilterInput): ProductsOutput
+}
+
+input ProductAttributeFilterInput {
+  sku: FilterEqualTypeInput
+}
+
+input FilterEqualTypeInput {
+  eq: String
+}
+
+type ProductsOutput {
+  items: [ProductInterface]
+}
+
+interface ProductInterface {
+  sku: String
+  media_gallery: [MediaGalleryInterface]
+}
+
+interface MediaGalleryInterface {
+  url: String
+}

@@ -42,7 +42,28 @@
 			  }
 			}
 		  }
-		}
+		},
+		{
+			"name": "Adobe_Commerce_GRAPHAL",
+			"handler": {
+			  "JsonSchema": {
+				"baseUrl": "https://emart.ddev.site",
+				"operations": [
+				  {
+					"type": "Query",
+					"field": "getProductRawJSON",
+					"path": "/graphql",
+					"method": "POST",
+					"requestSchema": "./commerceReq.json",
+					"responseSchema": "./commerceRes.json"
+				  }
+				],
+				"operationHeaders": {
+				  "Content-Type": "application/json"
+				}
+			  }
+			}
+		  }
 	  ]
 	}
   }
