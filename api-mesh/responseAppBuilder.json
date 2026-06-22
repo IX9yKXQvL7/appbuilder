@@ -1,0 +1,11 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "AppBuilderProductResponse",
+    "type": "object",
+    "properties": {
+      "apimesh_rest_testing": {
+        "type": "string"
+      }
+    },
+    "required": ["apimesh_rest_testing"]
+}

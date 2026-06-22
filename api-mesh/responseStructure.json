@@ -1,0 +1,45 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "InventoryResponse",
+  "type": "object",
+  "properties": {
+    "items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "sku": { "type": "string" },
+          "name": { "type": "string" },
+          "attribute_set_id": { "type": "integer" },
+          "price": { "type": "number" },
+          "status": { "type": "integer" },
+          "visibility": { "type": "integer" },
+          "type_id": { "type": "string" },
+          "created_at": { "type": "string" },
+          "updated_at": { "type": "string" },
+          "extension_attributes": {
+            "type": "object",
+            "properties": {
+              "website_ids": {
+                "type": "array",
+                "items": { "type": "integer" }
+              },
+              "category_links": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "position": { "type": "integer" },
+                    "category_id": { "type": "string" }
+                  },
+                  "required": ["category_id"]
+                }
+              }
+            }
+          }
+        },
+        "required": ["sku", "name"]
+      }
+    }
+  }
+}

@@ -1,78 +1,48 @@
 {
 	"meshConfig": {
-		"sources": [
-			{
-				"name": "EmartCommerceApi",
-				"handler": {
-					"JsonSchema": {
-						"baseUrl": "https://emart.ddev.site/rest/V1",
-						"operations": [
-							{
-								"type": "Query",
-								"field": "productDefaultReseCalling",
-								"path": "/products?searchCriteria[filterGroups][0][filters][0][field]=sku&searchCriteria[filterGroups][0][filters][0][value]={args.sku}",
-								"method": "GET",
-								"requestSchema": "./requestParams.json",
-								"responseSchema": "./responseStructure.json"
-							}
-						],
-						"operationHeaders": {
-							"Authorization": "{context.headers.authorization}"
-						}
-					}
+	  "sources": [
+		{
+		  "name": "EmartCommerceApi",
+		  "handler": {
+			"JsonSchema": {
+			  "baseUrl": "https://emart.ddev.site/rest/V1",
+			  "operations": [
+				{
+				  "type": "Query",
+				  "field": "productDefaultReseCalling",
+				  "path": "/products?searchCriteria[filterGroups][0][filters][0][field]=sku&searchCriteria[filterGroups][0][filters][0][value]={args.sku}",
+				  "method": "GET",
+				  "requestSchema": "./requestParams.json",
+				  "responseSchema": "./responseStructure.json"
 				}
-			},
-			{
-				"name": "NazihCommerceApi",
-				"handler": {
-					"JsonSchema": {
-						"baseUrl": "https://nazih.ddev.site/rest/V1",
-						"operations": [
-							{
-								"type": "Query",
-								"field": "productCustomReseCalling",
-								"path": "/product/apimesh/{args.sku}",
-								"method": "GET",
-								"requestSchema": "./requestParams.json",
-								"responseSchema": "./responseAppBuilder.json"
-							}
-						],
-						"operationHeaders": {
-							"Authorization": "{context.headers.authorization}"
-						}
-					}
-				}
-			},
-			{
-				"name": "NazihGraphQLApi",
-				"handler": {
-					"JsonSchema": {
-					"baseUrl": "https://nazih.ddev.site",
-					"operations": [
-						{
-						"type": "Query",
-						"field": "productBySkuGraphQL",
-						"path": "/graphql",
-						"method": "POST",
-						"requestSchema": "./reqGql.json",
-						"responseSchema": "./resGql.json"
-						}
-					],
-					"operationHeaders": {
-						"Authorization": "{context.headers.authorization}",
-						"Content-Type": "application/json"
-					}
-				}
-			},
-			"transforms": [
-			{
-				"prefix": {
-					"value": "GQL_"
-				}
+			  ],
+			  "operationHeaders": {
+				"Authorization": "{context.headers.authorization}"
+			  }
 			}
-		],
-		"responseConfig": {
-			"includeHTTPDetails": false
+		  }
+		},
+		{
+		  "name": "NazihCommerceApi",
+		  "handler": {
+			"JsonSchema": {
+			  "baseUrl": "https://nazih.ddev.site/rest/V1",
+			  "operations": [
+				{
+				  "type": "Query",
+				  "field": "productCustomReseCalling",
+				  "path": "/product/apimesh/{args.sku}",
+				  "method": "GET",
+				  "requestSchema": "./requestParams.json",
+				  "responseSchema": "./responseAppBuilder.json"
+				}
+			  ],
+			  "operationHeaders": {
+				"Authorization": "{context.headers.authorization}"
+			  }
+			}
+		  }
 		}
+	  ]
 	}
-}
+  }

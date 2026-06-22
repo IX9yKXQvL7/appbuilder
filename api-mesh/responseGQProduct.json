@@ -1,0 +1,32 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "products": {
+      "type": "object",
+      "properties": {
+        "items": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "media_gallery": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "url": { "type": "string" }
+                  },
+                  "required": ["url"]
+                }
+              }
+            },
+            "required": ["media_gallery"]
+          }
+        }
+      },
+      "required": ["items"]
+    }
+  },
+  "required": ["products"]
+}
