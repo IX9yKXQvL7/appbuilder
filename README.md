@@ -3,8 +3,8 @@
 
 <h3>Header paramater</h3>
 
-Authorization:Bearer eyJraWQiOiIxIiwiYWxnIjoiSFMyNTYifQ.eyJ1aWQiOjExNywidXR5cGlkIjoyLCJpYXQiOjE3ODIyMDQ0MzAsImV4cCI6MTc4MjIwODAzMH0.MT0BborF-z2D2vgUJMsEAtJRaO6cm8NsiJWmTQIMn14
-endpoint_1:https://staging2.unitedpharmacy.sa
-endpoint_2:https://nazih.ddev.site
-endpoint_3:https://staging2.unitedpharmacy.sa
-endpoint_4:https://748062-ecomappbuilder-stage.adobeio-static.net
+Authorization:Bearer eyJraWQiOiIxIiwiYWxnIjoiSFMyNTYifQ.eyJ1aWQiOjExNywidXR5cGlkIjoyLCJpYXQiOjE3ODIyMDQ0MzAsImV4cCI6MTc4MjIwODAzMH0.MT0BborF-z2D2vgUJMsEAtJRaO6cm8NsiJWmTQIMn14<br>
+endpoint_1:https://staging2.unitedpharmacy.sa<br>
+endpoint_2:https://nazih.ddev.site<br>
+endpoint_3:https://staging2.unitedpharmacy.sa<br>
+endpoint_4:https://748062-ecomappbuilder-stage.adobeio-static.net<br>
