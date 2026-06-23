@@ -8,3 +8,53 @@ endpoint_1:https://staging2.unitedpharmacy.sa<br>
 endpoint_2:https://nazih.ddev.site<br>
 endpoint_3:https://staging2.unitedpharmacy.sa<br>
 endpoint_4:https://748062-ecomappbuilder-stage.adobeio-static.net<br>
+
+
+Query 
+
+
+query GetEverythingFromMesh($skuArg: String!) {
+    productDefaultRestApi(sku: $skuArg) {
+        items {
+            sku
+            name
+            attribute_set_id
+            price
+            status
+            visibility
+            type_id
+            extension_attributes {
+                website_ids
+                category_links {
+                    category_id
+                    position
+                }
+            }
+        }
+    }
+    productCustomRestApi(sku: $skuArg) {
+        apimesh_rest_testing
+    }
+    getProductByGraphql(
+        input: {
+            query: "query ($sku: String!) { products(filter: { sku: { eq: $sku } }) { items { sku media_gallery { url } } } }"
+            variables: { sku: $skuArg }
+        }
+    ) {
+        data
+    }
+    getAppBuilderData {
+        success
+        message
+        data {
+            endpoint
+            sku
+        }
+    }
+}
+
+Variable 
+
+{
+  "skuArg": "CB-AA-004"
+}
