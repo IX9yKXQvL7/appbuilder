@@ -1,69 +1,90 @@
 {
 	"meshConfig": {
-	  "sources": [
-		{
-		  "name": "EmartCommerceApi",
-		  "handler": {
-			"JsonSchema": {
-			  "baseUrl": "https://emart.ddev.site/rest/V1",
-			  "operations": [
-				{
-				  "type": "Query",
-				  "field": "productDefaultReseCalling",
-				  "path": "/products?searchCriteria[filterGroups][0][filters][0][field]=sku&searchCriteria[filterGroups][0][filters][0][value]={args.sku}",
-				  "method": "GET",
-				  "requestSchema": "./requestParams.json",
-				  "responseSchema": "./responseStructure.json"
+		"sources": [
+			{
+				"name": "EmartCommerceApi",
+				"handler": {
+					"JsonSchema": {
+						"baseUrl": "{context.headers.endpoint_1}",
+						"operations": [
+							{
+								"type": "Query",
+								"field": "productDefaultRestApi",
+								"path": "/rest/V1/products?searchCriteria[filterGroups][0][filters][0][field]=sku&searchCriteria[filterGroups][0][filters][0][value]={args.sku}",
+								"method": "GET",
+								"requestSchema": "./requestParams.json",
+								"responseSchema": "./responseStructure.json"
+							}
+						],
+						"operationHeaders": {
+							"Authorization": "{context.headers.authorization}"
+						}
+					}
 				}
-			  ],
-			  "operationHeaders": {
-				"Authorization": "{context.headers.authorization}"
-			  }
-			}
-		  }
-		},
-		{
-		  "name": "NazihCommerceApi",
-		  "handler": {
-			"JsonSchema": {
-			  "baseUrl": "https://nazih.ddev.site/rest/V1",
-			  "operations": [
-				{
-				  "type": "Query",
-				  "field": "productCustomReseCalling",
-				  "path": "/product/apimesh/{args.sku}",
-				  "method": "GET",
-				  "requestSchema": "./requestParams.json",
-				  "responseSchema": "./responseAppBuilder.json"
+			},
+			{
+				"name": "NazihCommerceApi",
+				"handler": {
+					"JsonSchema": {
+						"baseUrl": "{context.headers.endpoint_2}",
+						"operations": [
+							{
+								"type": "Query",
+								"field": "productCustomRestApi",
+								"path": "/rest/V1/product/apimesh/{args.sku}",
+								"method": "GET",
+								"requestSchema": "./requestParams.json",
+								"responseSchema": "./responseAppBuilder.json"
+							}
+						],
+						"operationHeaders": {
+							"Authorization": "{context.headers.authorization}"
+						}
+					}
 				}
-			  ],
-			  "operationHeaders": {
-				"Authorization": "{context.headers.authorization}"
-			  }
-			}
-		  }
-		},
-		{
-			"name": "Adobe_Commerce_GRAPHAL",
-			"handler": {
-			  "JsonSchema": {
-				"baseUrl": "https://emart.ddev.site",
-				"operations": [
-				  {
-					"type": "Query",
-					"field": "getProductRawJSON",
-					"path": "/graphql",
-					"method": "POST",
-					"requestSchema": "./commerceReq.json",
-					"responseSchema": "./commerceRes.json"
-				  }
-				],
-				"operationHeaders": {
-				  "Content-Type": "application/json"
+			},
+			{
+				"name": "Adobe_Commerce_GRAPHAL",
+				"handler": {
+					"JsonSchema": {
+						"baseUrl": "{context.headers.endpoint_3}",
+						"operations": [
+							{
+								"type": "Query",
+								"field": "getProductByGraphql",
+								"path": "/graphql",
+								"method": "POST",
+								"requestSchema": "./commerceReq.json",
+								"responseSchema": "./commerceRes.json"
+							}
+						],
+						"operationHeaders": {
+							"Content-Type": "application/json"
+						}
+					}
 				}
-			  }
+			},
+			{
+				"name": "AppBuilderCustomAction",
+				"handler": {
+					"JsonSchema": {
+						"baseUrl": "{context.headers.endpoint_4}",
+						"operations": [
+							{
+								"type": "Query",
+								"field": "getAppBuilderData",
+								"path": "/api/v1/web/Adobe/testing",
+								"method": "POST",
+								"requestSchema": "./requestParams.json",
+								"responseSchema": "./responceAppbuilder.json"
+							}
+						],
+						"operationHeaders": {
+							"Content-Type": "application/json"
+						}
+					}
+				}
 			}
-		  }
-	  ]
+		]
 	}
-  }
+}

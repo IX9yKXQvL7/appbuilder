@@ -193,6 +193,17 @@ application:
               require-adobe-auth: false
               raw-http: true
               final: true
+
+          testing:
+            function: actions/test/index.js
+            web: 'yes'
+            runtime: nodejs:22
+            inputs:
+              LOG_LEVEL: debug
+              apiKey: $SERVICE_API_KEY
+            annotations:
+              require-adobe-auth: false
+              raw-http: true
               
         triggers:
           everyMin:
