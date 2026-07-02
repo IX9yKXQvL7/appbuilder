@@ -3459,3 +3459,60 @@ Building Mesh with config: /home/shubham.mistry@brainvire.com/htdocs/appbuilder/
 💡 [1m🕸️  Mesh[0m [36mCleanup[0m
 💡 [1m🕸️  Mesh[0m [36mDone! => /home/shubham.mistry@brainvire.com/htdocs/appbuilder/api-mesh/testMesh/.mesh[0m
 Mesh built successfully
+Building Mesh with config: /home/shubham.mistry@brainvire.com/htdocs/appbuilder/api-mesh/testMesh
+💡 [1m🕸️  Mesh[0m [36mCleaning existing artifacts[0m
+💡 [1m🕸️  Mesh[0m [36mReading the configuration[0m
+💡 [1m🕸️  Mesh[0m [36mGenerating the unified schema[0m
+💡 [1m🕸️  Mesh - EmartCommerceApi[0m [36mDereferencing the bundle[0m
+💡 [1m🕸️  Mesh - EmartCommerceApi[0m [36mCreating the GraphQL Schema from dereferenced schema[0m
+💡 [1m🕸️  Mesh - NazihCommerceApi[0m [36mDereferencing the bundle[0m
+💡 [1m🕸️  Mesh - NazihCommerceApi[0m [36mCreating the GraphQL Schema from dereferenced schema[0m
+💡 [1m🕸️  Mesh - Adobe_Commerce_GRAPHAL[0m [36mDereferencing the bundle[0m
+💡 [1m🕸️  Mesh - Adobe_Commerce_GRAPHAL[0m [36mCreating the GraphQL Schema from dereferenced schema[0m
+💡 [1m🕸️  Mesh - AppBuilderCustomAction[0m [36mDereferencing the bundle[0m
+💡 [1m🕸️  Mesh - AppBuilderCustomAction[0m [36mCreating the GraphQL Schema from dereferenced schema[0m
+💡 [1m🕸️  Mesh[0m [36mGenerating artifacts[0m
+💡 [1m🕸️  Mesh[0m [36mGenerating index file in TypeScript[0m
+💡 [1m🕸️  Mesh[0m [36mWriting index.ts for ESM to the disk.[0m
+💡 [1m🕸️  Mesh[0m [36mWriting index.ts for CJS to the disk.[0m
+💡 [1m🕸️  Mesh[0m [36mCleanup[0m
+💡 [1m🕸️  Mesh[0m [36mDone! => /home/shubham.mistry@brainvire.com/htdocs/appbuilder/api-mesh/testMesh/.mesh[0m
+Mesh built successfully
+Building Mesh with config: /home/shubham.mistry@brainvire.com/htdocs/appbuilder/api-mesh/testMesh
+💡 [1m🕸️  Mesh[0m [36mCleaning existing artifacts[0m
+💡 [1m🕸️  Mesh[0m [36mReading the configuration[0m
+💡 [1m🕸️  Mesh[0m [36mGenerating the unified schema[0m
+💡 [1m🕸️  Mesh - NazihCommerceApi[0m [36mDereferencing the bundle[0m
+💡 [1m🕸️  Mesh - NazihCommerceApi[0m [36mCreating the GraphQL Schema from dereferenced schema[0m
+💡 [1m🕸️  Mesh - AppBuilderCustomAction[0m [36mDereferencing the bundle[0m
+💡 [1m🕸️  Mesh - AppBuilderCustomAction[0m [36mCreating the GraphQL Schema from dereferenced schema[0m
+💡 [1m🕸️  Mesh - Adobe_Commerce_GRAPHAL[0m [36mDereferencing the bundle[0m
+💡 [1m🕸️  Mesh - Adobe_Commerce_GRAPHAL[0m [36mCreating the GraphQL Schema from dereferenced schema[0m
+💡 [1m🕸️  Mesh - EmartCommerceApi[0m [36mDereferencing the bundle[0m
+💡 [1m🕸️  Mesh - EmartCommerceApi[0m [36mCreating the GraphQL Schema from dereferenced schema[0m
+💡 [1m🕸️  Mesh[0m [36mGenerating artifacts[0m
+💡 [1m🕸️  Mesh[0m [36mGenerating index file in TypeScript[0m
+💡 [1m🕸️  Mesh[0m [36mWriting index.ts for ESM to the disk.[0m
+💡 [1m🕸️  Mesh[0m [36mWriting index.ts for CJS to the disk.[0m
+💡 [1m🕸️  Mesh[0m [36mCleanup[0m
+💡 [1m🕸️  Mesh[0m [36mDone! => /home/shubham.mistry@brainvire.com/htdocs/appbuilder/api-mesh/testMesh/.mesh[0m
+Mesh built successfully
+Building Mesh with config: /home/shubham.mistry@brainvire.com/htdocs/appbuilder/api-mesh/testMesh
+💡 [1m🕸️  Mesh[0m [36mCleaning existing artifacts[0m
+💡 [1m🕸️  Mesh[0m [36mReading the configuration[0m
+💡 [1m🕸️  Mesh[0m [36mGenerating the unified schema[0m
+💡 [1m🕸️  Mesh - NazihCommerceApi[0m [36mDereferencing the bundle[0m
+💡 [1m🕸️  Mesh - NazihCommerceApi[0m [36mCreating the GraphQL Schema from dereferenced schema[0m
+💡 [1m🕸️  Mesh - Adobe_Commerce_GRAPHAL[0m [36mDereferencing the bundle[0m
+💡 [1m🕸️  Mesh - Adobe_Commerce_GRAPHAL[0m [36mCreating the GraphQL Schema from dereferenced schema[0m
+💡 [1m🕸️  Mesh - AppBuilderCustomAction[0m [36mDereferencing the bundle[0m
+💡 [1m🕸️  Mesh - AppBuilderCustomAction[0m [36mCreating the GraphQL Schema from dereferenced schema[0m
+💡 [1m🕸️  Mesh - EmartCommerceApi[0m [36mDereferencing the bundle[0m
+💡 [1m🕸️  Mesh - EmartCommerceApi[0m [36mCreating the GraphQL Schema from dereferenced schema[0m
+💡 [1m🕸️  Mesh[0m [36mGenerating artifacts[0m
+💡 [1m🕸️  Mesh[0m [36mGenerating index file in TypeScript[0m
+💡 [1m🕸️  Mesh[0m [36mWriting index.ts for ESM to the disk.[0m
+💡 [1m🕸️  Mesh[0m [36mWriting index.ts for CJS to the disk.[0m
+💡 [1m🕸️  Mesh[0m [36mCleanup[0m
+💡 [1m🕸️  Mesh[0m [36mDone! => /home/shubham.mistry@brainvire.com/htdocs/appbuilder/api-mesh/testMesh/.mesh[0m
+Mesh built successfully
