@@ -5,12 +5,12 @@
 				"name": "EmartCommerceApi",
 				"handler": {
 					"JsonSchema": {
-						"baseUrl": "https://staging2.unitedpharmacy.sa",
+						"baseUrl": "https://nazihnewae.demo.ecomextension.com",
 						"operations": [
 							{
 								"type": "Query",
 								"field": "productDefaultRestApi",
-								"path": "/rest/V1/products?searchCriteria[filterGroups][0][filters][0][field]=sku&searchCriteria[filterGroups][0][filters][0][value]={args.sku}",
+								"path": "/rest/V1/products?searchCriteria[filterGroups][0][filters][0][field]=sku&searchCriteria[filterGroups][0][filters][0][condition_type]=eq&searchCriteria[filterGroups][0][filters][0][value]={args.sku}",
 								"method": "GET",
 								"requestSchema": "./requestParams.json",
 								"responseSchema": "./responseStructure.json"
@@ -26,7 +26,7 @@
 				"name": "NazihCommerceApi",
 				"handler": {
 					"JsonSchema": {
-						"baseUrl": "https://nazih.ddev.site",
+						"baseUrl": "https://emart.ddev.site",
 						"operations": [
 							{
 								"type": "Query",
@@ -59,7 +59,8 @@
 							}
 						],
 						"operationHeaders": {
-							"Content-Type": "application/json"
+							"Content-Type": "application/json",
+							"store": "{context.headers.store}"
 						}
 					}
 				}
@@ -85,6 +86,7 @@
 					}
 				}
 			}
-		]
+		],
+		"additionalResolvers": ["./additional-resolvers.js"]
 	}
 }
