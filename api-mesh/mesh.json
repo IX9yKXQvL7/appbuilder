@@ -5,7 +5,7 @@
 				"name": "EmartCommerceApi",
 				"handler": {
 					"JsonSchema": {
-						"baseUrl": "https://nazihnewae.demo.ecomextension.com",
+						"baseUrl": "{URL1}",
 						"operations": [
 							{
 								"type": "Query",
@@ -26,7 +26,7 @@
 				"name": "NazihCommerceApi",
 				"handler": {
 					"JsonSchema": {
-						"baseUrl": "https://emart.ddev.site",
+						"baseUrl": "{URL2}",
 						"operations": [
 							{
 								"type": "Query",
@@ -47,7 +47,7 @@
 				"name": "Adobe_Commerce_GRAPHAL",
 				"handler": {
 					"JsonSchema": {
-						"baseUrl": "https://staging2.unitedpharmacy.sa",
+						"baseUrl": "{URL3}",
 						"operations": [
 							{
 								"type": "Query",
@@ -69,7 +69,7 @@
 				"name": "AppBuilderCustomAction",
 				"handler": {
 					"JsonSchema": {
-						"baseUrl": "https://748062-ecomappbuilder-stage.adobeio-static.net",
+						"baseUrl": "{URL4}",
 						"operations": [
 							{
 								"type": "Query",
